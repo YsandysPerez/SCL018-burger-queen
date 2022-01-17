@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export const Cocina = () => {
     return (
@@ -9,6 +10,10 @@ export const Cocina = () => {
           <li>articulo dos</li>
           <li>articulo tres</li>
         </ul>
+        <nav>
+        <Link to="/Inicio"> Inicio</Link>
+        </nav>
+
       </div>
     )
 }
