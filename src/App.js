@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -12,6 +11,7 @@ function App() {
       <div className="App">
           <main>
             <Routes>
+            <Route path= "/" element={ <Inicio/>}/>
               <Route path= "/Inicio" element={ <Inicio/>}/>
               <Route path= "/Garzon" element={<Garzon/> }/>
               <Route path= "/Cocina" element={ <Cocina/>}/>
