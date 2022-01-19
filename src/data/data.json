@@ -1,43 +1,92 @@
-{
-  "nombre": "Burguer Queen",
-  "desayuno": [
-    {
-      "cafe americano": "5",
-      "cafe con leche": "7",
-      "Sandwich de jamón y queso": "10",
-      "Jugo de frutas natural": "7"
-    }
-  ],
-  
-  "almuerzo y cena": [
-      {
-        "Hamburguesa simple": "10",
-        "Hamburguesa doble": "15",
-        "tipos de carne": [
-      {
-        "res": "1",
-        "pollo": "1",
-        "vegetariana": "1"
-      }
-    ]
-      }
-  ],
-
-   "Acompañamientos": [
-        {
-          "Papas fritas": "5",
-          "Aros de cebolla": "5"
-        }
-   ],
-   
-    "Para tomar": [
-            {
-            "Agua 500ml": "5",
-            "Agua 750ml": "7",
-            "Bebida/gaseosa 500ml": "7",
-            "Bebida/gaseosa 750ml": "10"
-          }
-        ]
-      
-}   
-  
+{"drinks": [
+  {
+    "id": 1,
+    "name": "Café Americano",
+    "price": 3000,
+    "category": "Drinks"
+  },
+  {
+    "id": 2,
+    "name": "Café con leche",
+    "price": 3000,
+    "category": "Drinks"
+  },
+  {
+    "id": 3,
+    "name": "Jugo de frutas natural",
+    "price": 5000,
+    "category": "Drinks"
+  },
+  {
+    "id": 4,
+    "name": "Agua sin gas",
+    "price": 2000,
+    "category": "Drinks"
+  },
+  {
+    "id": 5,
+    "name": "Agua con gas",
+    "price": 2000,
+    "category": "Drinks"
+  },
+  {
+    "id": 6,
+    "name": "Bebida 330ml",
+    "price": 2000,
+    "category": "Drinks"
+  },
+  {
+    "id": 7,
+    "name": "Bebida 500ml",
+    "price": 2500,
+    "category": "Drinks"
+  }
+],
+"food": [
+  {
+    "id": 8,
+    "name": "Sandwich de jamón y queso",
+    "price": 5000,
+    "category": "Food"
+  },
+  {
+    "id": 9,
+    "name": "Hamburguesa simple",
+    "price": 6000,
+    "category": "Food"
+  },
+  {
+    "id": 10,
+    "name": "Hamburguesa doble",
+    "price": 7000,
+    "category": "Food"
+  },
+  {
+    "id": 11,
+    "name": "Vacuno",
+    "category": "Meal"
+  },
+  {
+    "id": 12,
+    "name": "Pollo",
+    "category": "Meal"
+  },
+  {
+    "id": 13,
+    "name": "Vegetariana",
+    "category": "Meal"
+  },
+  {
+    "id": 14,
+    "name": "Papas fritas",
+    "price": 2000,
+    "category": "Food" 
+  },
+  {
+    "id": 15,
+    "name": "Aros de cebolla",
+    "price": 2000,
+    "category": "Food"
+  }
+]
+}
