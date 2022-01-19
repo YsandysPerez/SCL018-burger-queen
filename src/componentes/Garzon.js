@@ -6,7 +6,6 @@ import Food from "./Food";
  export const Garzon = () => {
     return (
       <div>
-        <h2> Garzón</h2>
         <Drinks/>
         <Food/>
         <nav>
