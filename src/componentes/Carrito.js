@@ -7,12 +7,12 @@ export const Carrito = ({carrito}) => {
             {carrito.length > 0 ?
            carrito.map((producto, index) => {
                return(
-                   <producto key = {index}>
+                   <div key = {index}>
                        <div>
                            {producto.nombre}
                        </div>
                        Cantidad: {producto.cantidad}
-                   </producto>
+                   </div>
                )
            })
             :

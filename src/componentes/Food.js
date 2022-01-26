@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import data from "./../data/data.json";
 
 const Foods = ({agregar}) => {
+    const [show, showMenu]= useState(true);
     const food = data.food;
     return ( 
-        
+        <>
+        {show === true ?
         <div className="bg-slate-700">
-        <button className="text-lg font-semibold flex justify-start m-6 w-6/12 bg-yellow-500 text-teal-50 text-center">comida</button>
+        <button className="text-lg font-semibold flex justify-start m-6 w-6/12 bg-yellow-500 text-teal-50 text-center"onClick={() => showMenu(false)}>Comida</button>
+        </div>
+        :
+        <div className="bg-slate-700">
+        <button className="text-lg font-semibold flex justify-start m-6 w-6/12 bg-yellow-500 text-teal-50 text-center"onClick={() => showMenu(true)}>Comida</button>
         <div>
         {food.map((element, index) => {
             
@@ -19,6 +25,9 @@ const Foods = ({agregar}) => {
         })}
     </div>
     </div>
+    
+     }
+     </>
      );
 }
  
