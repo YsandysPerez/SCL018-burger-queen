@@ -30,12 +30,12 @@ export const Garzon = () => {
   }
 
   return (
-    <div>
+    <div className= " p-20">
       <Drinks agregar={agregar} />
       <Food agregar={agregar} />
       <nav>
         <Link to="/Inicio">
-          <button className="h-20 px-20 font-semibold text-lg text-teal-50 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-yellow-600">
+          <button className="h-20 m-6 px-20 font-semibold text-lg text-teal-50 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-yellow-600">
             Inicio
           </button>
         </Link>
