@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import data from "./../data/data.json";
+import { menuContext } from "../App";
 
-const Foods = ({agregar}) => {
+const Foods = () => {
+    const allContext = useContext(menuContext);
     const [show, showMenu]= useState(true);
     const food = data.food;
     return ( 
@@ -18,7 +20,7 @@ const Foods = ({agregar}) => {
             
             return(
             <div key={index} className= "w-full p-1 ">
-                <button onClick={() => agregar(element.id, element.name)}className=" mx-12 w-1/2 h-20  bg-yellow-500 text-teal-50 rounded-lg transition-colors duration-150 focus:shadow-outline hover:bg-yellow-600 ">{element.name} ${element.price}</button>
+                <button className=" mx-12 w-1/2 h-20  bg-yellow-500 text-teal-50 rounded-lg transition-colors duration-150 focus:shadow-outline hover:bg-yellow-600" onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</button>
             </div>
             );
         })}

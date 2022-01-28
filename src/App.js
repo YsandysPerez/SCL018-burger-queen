@@ -30,7 +30,36 @@ function App() {
     });
   };
 
-  const allVar = { products, boxProducts, addProduct };
+  const removeProduct = (id) => {
+    boxProducts({
+      ...products,
+      order: products.order.filter((orderItem) => orderItem.id !== id)
+    });
+  };
+
+  const increProduct = (id) => {
+    boxProducts({
+      ...products,
+      order: products.order.map((orderItem) =>
+      orderItem.id === id
+          ? { ...orderItem, count: orderItem.count + 1 }
+          : orderItem
+      )
+    });
+  };
+
+  const decreProduct = (id) => {
+    boxProducts({
+      ...products,
+      order: products.order.map((orderItem) =>
+      orderItem.id === id
+          ? { ...orderItem, count: orderItem.count > 1 ? orderItem.count - 1 : 1 }
+          : orderItem
+      )
+    });
+  };
+
+  const allVar = { products, boxProducts, addProduct, removeProduct, increProduct, decreProduct };
 
   return (
     <menuContext.Provider value={allVar}>
