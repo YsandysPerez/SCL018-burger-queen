@@ -8,16 +8,16 @@ const Drinks = ({agregar}) => {
     <>
     {show === true ?
     <div className=" ">
-        <button className="text-lg font-semibold flex justify-start  w-6/12 bg-yellow-500 text-teal-50 text-center" onClick={() => showMenu(false)}>Bebidas</button>
+        <button className="h-20 my-6  mx-2 px-20 font-semibold text-lg text-teal-50 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-yellow-600" onClick={() => showMenu(false)}>Bebidas</button>
     </div>
     :
-    <div className=" ">
-    <button className="text-lg font-semibold flex justify-start w-6/12 bg-yellow-500 text-teal-50 text-center" onClick={() => showMenu(true)}>Bebidas</button>
+    <div className=" w-full">
+    <button className="h-20 my-6 mx-2 px-20 font-semibold text-lg text-teal-50 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-yellow-600" onClick={() => showMenu(true)}>Bebidas</button>
     <div className=" ">
     {drink.map((element, index) => {
         return(
-        <div key={index} className= "w-1/2 p-1 ">
-        <button onClick={() => agregar(element.id, element.name)} className=" m-2 w-1/2 h-12 bg-yellow-500 text-teal-50 rounded-lg transition-colors duration-150 focus:shadow-outline hover:bg-yellow-600 ">{element.name} ${element.price}</button>
+        <div key={index} className= "w-full p-1 ">
+        <button onClick={() => agregar(element.id, element.name)} className=" mx-12 w-1/2 h-20 bg-yellow-500 text-teal-50 rounded-lg transition-colors duration-150 focus:shadow-outline hover:bg-yellow-600 ">{element.name} ${element.price}</button>
         </div>
             );
         })}

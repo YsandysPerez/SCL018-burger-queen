@@ -30,19 +30,21 @@ export const Garzon = () => {
   }
 
   return (
-    <div className= " p-20">
+    <div className= " flex flex-col w-screen ">
+    <Link to="/Inicio">
+      <button className=" h-10 m-6 px-20 font-semibold text-lg text-teal-50 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-yellow-600">
+        Inicio
+      </button>
+    </Link>
+  
+    <div className= " flex flex-row w-1/2 ">
       <Drinks agregar={agregar} />
       <Food agregar={agregar} />
-      <nav>
-        <Link to="/Inicio">
-          <button className="h-20 m-6 px-20 font-semibold text-lg text-teal-50 transition-colors duration-150 bg-yellow-500 rounded-lg focus:shadow-outline hover:bg-yellow-600">
-            Inicio
-          </button>
-        </Link>
-      </nav>
+    
       <aside>
         <Carrito carrito = {carrito} />
       </aside>
+    </div>
     </div>
   );
 };
