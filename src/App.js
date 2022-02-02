@@ -5,6 +5,8 @@ import { Inicio } from "./componentes/Inicio.js";
 import { Garzon } from "./componentes/Garzon.js";
 import { Cocina } from "./componentes/Cocina.js";
 import data from "../src/data/data.json";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const menu = data;
