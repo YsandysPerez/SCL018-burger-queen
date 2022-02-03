@@ -8,11 +8,12 @@ export const Garzon = () => {
  {/*const[carrito, cambiarCarrito] = useState([]);*/}
 
   return (
+    <div classname="container">
     <div>
       <div class="container">
   <div class="row">
     <div class="col">
-    <div class="row">
+    <div class="row row-cols-2">
     <Drinks/>
     <Food/>
     </div>
@@ -34,6 +35,7 @@ export const Garzon = () => {
       <aside>
        
       </aside>
+    </div>
     </div>
   );
 };

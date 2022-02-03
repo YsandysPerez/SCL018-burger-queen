@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react";
 import data from "./../data/data.json";
 import { menuContext } from "../App";
+import {Button} from "react-bootstrap";
 
 const Drinks = () => {
     const allContext = useContext(menuContext);
@@ -10,16 +11,16 @@ const Drinks = () => {
     <>
     {show === true ?
     <div >
-        <button class="btn btn-info btn-lg" onClick={() => showMenu(false)}>Bebidas</button>
+        <Button onClick={() => showMenu(false)}>Bebidas</Button>
     </div>
     :
     <div>
-    <button class="btn btn-info btn-lg" onClick={() => showMenu(true)}>Bebidas</button>
+    <Button onClick={() => showMenu(true)}>Bebidas</Button>
     <div >
     {drink.map((element, index) => {
         return(
         <div key={index}>
-        <button class="btn btn-info btn-lg" onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</button>
+        <Button  onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</Button>
         </div>
             );
         })}
