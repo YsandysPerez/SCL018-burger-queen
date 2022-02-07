@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { traverseTwoPhase } from "react-dom/cjs/react-dom-test-utils.production.min";
 import { menuContext } from "../App";
-import {Button, ButtonToolbar , ButtonGroup  } from "react-bootstrap";
+import {Button, ButtonToolbar , ButtonGroup, Container  } from "react-bootstrap";
 
 export const Carrito = () => {
     const allContext = useContext(menuContext);
@@ -12,6 +12,7 @@ export const Carrito = () => {
     return (
       <>
       <div>
+      <Container fluid= " sm, md, lg, xl">
         <h3>Carrito de compra</h3>
         {allContext.products.order.map((e, index) => {
             return( 
@@ -27,11 +28,11 @@ export const Carrito = () => {
               <Button variant="outline-secondary"> {e.count}</Button>
               </ButtonGroup>
               </ButtonToolbar>
-              
             </div>
            </ul>
             )
         })}
+        </Container>
       </div>
       <div>
       <h3>Total consumo: ${totalCartAmount}</h3>

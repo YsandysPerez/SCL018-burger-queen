@@ -11,16 +11,16 @@ const Drinks = () => {
     <>
     {show === true ?
     <div >
-        <Button onClick={() => showMenu(false)}>Bebidas</Button>
+        <Button variant="warning" size="lg" onClick={() => showMenu(false)}>Bebidas</Button>
     </div>
     :
     <div>
-    <Button onClick={() => showMenu(true)}>Bebidas</Button>
+    <Button variant="warning" size="lg" onClick={() => showMenu(true)}>Bebidas</Button>
     <div >
     {drink.map((element, index) => {
         return(
-        <div key={index}>
-        <Button  onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</Button>
+        <div key={index} className="w-1/2">
+        <Button variant="warning" size="lg" onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</Button>
         </div>
             );
         })}
