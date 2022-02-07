@@ -1,10 +1,32 @@
 import React, { useContext } from "react";
+import db from "../../src/firebase.js";
+import { collection, addDoc } from "firebase/firestore";
 import { traverseTwoPhase } from "react-dom/cjs/react-dom-test-utils.production.min";
 import { menuContext } from "../App";
 import {Button, ButtonToolbar , ButtonGroup, Container  } from "react-bootstrap";
+import { Form } from "./Form";
 
 export const Carrito = () => {
-    const allContext = useContext(menuContext);
+  const allContext = useContext(menuContext);
+  const totalOrder = allContext.totalOrderAmount;
+
+    const onSubmit = async (e) =>{
+        e.preventDefault();
+
+        try {
+            await addDoc(collection(db, 'order'), {
+                name: allContext.name,
+                table: allContext.table,
+                orderClient: allContext.products.resumeOrder,
+                totalPrice: allContext.totalCartAmount,
+                status: "Pendiente"
+            });
+        } catch (error) {
+            console.log('Ingresaste mal los datos');
+            console.log(error);
+        }
+    }
+
     const totalCartAmount = allContext.products.order
       .reduce((total, e) => (total = total + e.price * e.count), 0)
       .toFixed(2);
@@ -13,7 +35,11 @@ export const Carrito = () => {
       <>
       <div>
       <Container fluid= " sm, md, lg, xl">
-        <h3>Carrito de compra</h3>
+        <div>
+          <Form/>
+        </div>
+
+        <h3>Orden de mesa</h3>
         {allContext.products.order.map((e, index) => {
             return( 
               <ul class="list-group">
@@ -36,6 +62,9 @@ export const Carrito = () => {
       </div>
       <div>
       <h3>Total consumo: ${totalCartAmount}</h3>
+      </div>
+      <div>
+        <button>Enviar a Cocina</button>
       </div>
       </>
     );

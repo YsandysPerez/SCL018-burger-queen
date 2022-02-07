@@ -13,6 +13,8 @@ const menu = data;
 export const menuContext = createContext();
 
 function App() {
+  const [name, changeName] = useState('');
+  const [table, changeTable] = useState('');
 
   const [products, boxProducts] = useState({
     productList: menu,
@@ -61,7 +63,7 @@ function App() {
     });
   };
 
-  const allVar = { products, boxProducts, addProduct, removeProduct, increProduct, decreProduct };
+  const allVar = { name, changeName, table, changeTable, products, boxProducts, addProduct, removeProduct, increProduct, decreProduct };
 
   return (
     <menuContext.Provider value={allVar}>

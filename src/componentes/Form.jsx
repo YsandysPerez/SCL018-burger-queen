@@ -1,24 +1,22 @@
-import React, {useState} from "react";
+import React, {useContext} from "react";
+import { menuContext } from "../App";
 
-const Form = () => {
-    const [name, changeName] = useState('');
-    const [table, changeTable] = useState('');
-
+export const Form = () => {
+    const allContext = useContext(menuContext);
     return(
-        <Form action=''>
+        <form action=''>
             <input 
             type = 'text' 
             name= 'nombre' 
-            value={name} 
-            onChange={(e) => changeName(e.target.value)} 
+            //value={name} 
+            onChange={(e) => allContext.changeName(e.target.value)} 
             placeholder='Nombre del cliente'/>
             <input 
             type = 'number' 
             name= 'mesa' 
-            value={table}
-            onChange={(e) => changeTable(e.target.value)} 
+            //value={table}
+            onChange={(e) => allContext.changeTable(e.target.value)} 
             placeholder='Mesa'/>
-            <button type= 'submit'>Crear Mesa</button>
-        </Form>
+        </form>
     )
 }
