@@ -10,18 +10,18 @@ const Foods = () => {
     return ( 
         <>
         {show === true ?
-        <div>
-        <Button class="btn btn-warning btn-lg" onClick={() => showMenu(false)}>Comida</Button>
+        <div >
+        <Button variant="warning"  size="lg" onClick={() => showMenu(false)}>Comida</Button>
         </div>
         :
         <div >
-        <Button class="btn btn-warning btn-lg" onClick={() => showMenu(true)}>Comida</Button>
+        <Button variant="warning" size="lg" onClick={() => showMenu(true)}>Comida</Button>
         <div>
         {food.map((element, index) => {
             
             return(
-            <div key={index} >
-                <Button class="btn btn-warning btn-lg" onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</Button>
+            <div key={index} className="w-1/2">
+                <Button  variant="warning" size="lg" onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</Button>
             </div>
             );
         })}
