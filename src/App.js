@@ -1,9 +1,9 @@
 import "./App.css";
 import React, {createContext, useState}from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Inicio } from "./componentes/Inicio.js";
-import { Garzon } from "./componentes/Garzon.js";
-import { Cocina } from "./componentes/Cocina.js";
+import { Inicio } from "./componentes/Inicio.jsx";
+import { Garzon } from "./componentes/Garzon.jsx";
+import { Cocina } from "./componentes/Cocina.jsx";
 import data from "../src/data/data.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

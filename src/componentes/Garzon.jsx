@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Drinks from "./Drinks.js";
-import Food from "./Food.js";
-import { Carrito } from "./Carrito.js";
+import Drinks from "./Drinks.jsx";
+import Food from "./Food.jsx";
+import { Carrito } from "./Carrito.jsx";
 
 export const Garzon = () => {
- {/*const[carrito, cambiarCarrito] = useState([]);*/}
-
   return (
     <div classname="container">
     <div>
