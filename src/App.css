@@ -27,6 +27,35 @@
 .App-link {
   color: #61dafb;
 }
+.carrito{
+ margin: 10px;
+}
+.boton{
+ margin-left: 80px;
+}
+.back{
+ 
+  height: 100vh;
+  background-color: #f8d61854;
+ 
+}
+.logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.botones{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin:10px
+}
+.form{
+  height: 40px;
+text-decoration: none;
+margin-bottom:20px;
+
+}
 
 @keyframes App-logo-spin {
   from {
