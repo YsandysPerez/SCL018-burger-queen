@@ -1,13 +1,17 @@
 import React, { useContext } from "react";
 import db from "../../src/firebase.js";
 import { collection, addDoc } from "firebase/firestore";
-import { traverseTwoPhase } from "react-dom/cjs/react-dom-test-utils.production.min";
 import { menuContext } from "../App";
 import {Button, ButtonToolbar , ButtonGroup, Container  } from "react-bootstrap";
 import { Form } from "./Form";
 
 export const Carrito = () => {
   const allContext = useContext(menuContext);
+
+  const totalCartAmount = allContext.products.order
+  .reduce((total, e) => (total = total + e.price * e.count), 0)
+  .toFixed(2);
+
 
     const onSubmit = async (e) =>{
         e.preventDefault();
@@ -16,8 +20,8 @@ export const Carrito = () => {
             await addDoc(collection(db, 'order'), {
                 name: allContext.name,
                 table: allContext.table,
-                orderClient: allContext.products.resumeOrder,
-                totalPrice: allContext.totalCartAmount,
+                order: allContext.products.order,
+                total: totalCartAmount,
                 status: "Pendiente"
             });
         } catch (error) {
@@ -26,10 +30,6 @@ export const Carrito = () => {
         }
     }
 
-    const totalCartAmount = allContext.products.order
-      .reduce((total, e) => (total = total + e.price * e.count), 0)
-      .toFixed(2);
-  
     return (
       <>
       <div class= "carrito">
@@ -37,7 +37,7 @@ export const Carrito = () => {
         <div>
           <Form/>
         </div>
-
+        <form action="" onSubmit={onSubmit}>
         <h3>Orden de mesa</h3>
         {allContext.products.order.map((e, index) => {
             return( 
@@ -57,14 +57,14 @@ export const Carrito = () => {
            </ul>
             )
         })}
-        </Container>
-      </div>
       <div>
       <h3>Total consumo: ${totalCartAmount}</h3>
       </div>
       <div class="boton" >
-      <Button variant="warning" >Enviar a Cocina</Button>
-      
+      <Button type="submit" variant="warning" >Enviar a Cocina</Button>
+      </div>
+      </form>
+        </Container>
       </div>
       </>
     );
