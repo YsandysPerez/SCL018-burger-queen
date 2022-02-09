@@ -24,6 +24,11 @@ export const Carrito = () => {
                 total: totalCartAmount,
                 status: "Pendiente"
             });
+
+            allContext.changeName('');
+            allContext.changeTable('');
+            allContext.clearProductsFromOrder();
+
         } catch (error) {
             console.log('Ingresaste mal los datos');
             console.log(error);

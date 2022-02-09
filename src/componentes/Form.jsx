@@ -8,13 +8,13 @@ export const Form = () => {
             <input 
             type = 'text' 
             name= 'nombre' 
-            //value={name} 
+            value={allContext.name} 
             onChange={(e) => allContext.changeName(e.target.value)} 
             placeholder='Nombre del cliente'/>
             <input 
             type = 'number' 
             name= 'mesa' 
-            //value={table}
+            value={allContext.table}
             onChange={(e) => allContext.changeTable(e.target.value)} 
             placeholder='Mesa'/>
         </form>

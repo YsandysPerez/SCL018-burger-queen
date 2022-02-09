@@ -34,6 +34,14 @@ function App() {
     });
   };
 
+  
+  const clearProductsFromOrder = () => {
+    boxProducts({
+      ...products,
+      order: []
+    })
+  }
+
   const removeProduct = (id) => {
     boxProducts({
       ...products,
@@ -63,7 +71,7 @@ function App() {
     });
   };
 
-  const allVar = { name, changeName, table, changeTable, products, boxProducts, addProduct, removeProduct, increProduct, decreProduct };
+  const allVar = { name, changeName, table, changeTable, products, boxProducts, addProduct, clearProductsFromOrder, removeProduct, increProduct, decreProduct };
 
   return (
     <menuContext.Provider value={allVar}>
