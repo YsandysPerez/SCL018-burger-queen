@@ -8,15 +8,15 @@ import {Navbar, Container, Nav} from "react-bootstrap"
 
 export const Garzon = () => {
   return (
-    <div>
-       <Container fluid= " sm, md, lg, xl">
+    <div >
+       <Container fluid= "md">
     <Navbar bg="light" expand="lg">
     <Navbar>Burger Queen</Navbar>
       <Nav className="me-auto">
         <Nav.Link href="/Inicio">Inicio</Nav.Link>
        </Nav>
        </Navbar>
-      <div class="container">
+      <div class="container carrito">
   <div class="row ">
     <div class="col">
     <div class="row row-cols-2">

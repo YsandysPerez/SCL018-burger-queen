@@ -4,7 +4,7 @@ import { menuContext } from "../App";
 export const Form = () => {
     const allContext = useContext(menuContext);
     return(
-        <form action=''>
+        <form action='' class="form">
             <input 
             type = 'text' 
             name= 'nombre' 

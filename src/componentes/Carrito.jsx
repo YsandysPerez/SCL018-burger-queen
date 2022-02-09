@@ -8,7 +8,6 @@ import { Form } from "./Form";
 
 export const Carrito = () => {
   const allContext = useContext(menuContext);
-  const totalOrder = allContext.totalOrderAmount;
 
     const onSubmit = async (e) =>{
         e.preventDefault();
@@ -33,8 +32,8 @@ export const Carrito = () => {
   
     return (
       <>
-      <div>
-      <Container fluid= " sm, md, lg, xl">
+      <div class= "carrito">
+      <Container >
         <div>
           <Form/>
         </div>
@@ -63,8 +62,9 @@ export const Carrito = () => {
       <div>
       <h3>Total consumo: ${totalCartAmount}</h3>
       </div>
-      <div>
-        <button>Enviar a Cocina</button>
+      <div class="boton" >
+      <Button variant="warning" >Enviar a Cocina</Button>
+      
       </div>
       </>
     );
