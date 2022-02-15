@@ -48,8 +48,7 @@ export const Carrito = () => {
             return( 
               <ul class="list-group">
             <div key = {index}>
-            <li class="list-group-item"> {e.name} ${e.price} {'\n'}
-             Total: ${(e.price * e.count).toFixed(2)}</li>
+            <li class="list-group-item"> {e.name} ${e.price} {'\n'} Total: ${(e.price * e.count).toFixed(2)}</li>
               <ButtonToolbar className="mb-3" aria-label="Toolbar with Button groups">
               <ButtonGroup className="me-2" aria-label="First group">
               <Button variant="secondary" onClick={() => allContext.decreProduct(e.id)}> - </Button>{' '}

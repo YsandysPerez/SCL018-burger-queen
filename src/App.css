@@ -50,11 +50,18 @@
   justify-content: center;
   margin:10px
 }
+.btn{
+  margin: 30px;
+}
 .form{
   height: 40px;
 text-decoration: none;
 margin-bottom:20px;
 
+}
+.restLogo{
+  height: 400px;
+  width: 400px;
 }
 
 @keyframes App-logo-spin {
