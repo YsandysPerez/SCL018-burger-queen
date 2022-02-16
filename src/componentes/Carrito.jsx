@@ -4,6 +4,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { menuContext } from "../App";
 import {Button, ButtonToolbar , ButtonGroup, Container  } from "react-bootstrap";
 import { Form } from "./Form";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 export const Carrito = () => {
   const allContext = useContext(menuContext);
@@ -12,10 +14,43 @@ export const Carrito = () => {
   .reduce((total, e) => (total = total + e.price * e.count), 0)
   .toFixed(2);
 
+  const MySwal = withReactContent(Swal);
+
+  const sendOrder = (e) => {
+    if (allContext.table === "" || allContext.name === "") {
+        MySwal.fire({
+            title: "Ups...",
+            text: "Creo que olvidaste escribir el Garzón o Mesa del cliente",
+            icon: "error",
+        });
+        } else if (allContext.products.order.length === 0) {
+        MySwal.fire({
+            title: "Espera un momento!",
+            text: "No has ingresado productos al pedido",
+            icon: "error",
+        });
+        } else {
+        Swal.fire({
+            title: "¿Deseas confirmar el pedido?",
+            text: "Si tienes dudas, consúltalo con el cliente",
+            icon: "warning",
+            showCancelButton: true,
+            cancelButtonText: "Cancelar",
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Confirmar",
+        }).then((result) => {
+            if (result.isConfirmed) {
+            Swal.fire("Enviado", "El pedido ha sido enviado a Cocina", "success");
+            onSubmit(e);
+            }
+        });
+    }
+};
+
 
     const onSubmit = async (e) =>{
         e.preventDefault();
-
         try {
             await addDoc(collection(db, 'order'), {
                 name: allContext.name,
@@ -55,6 +90,7 @@ export const Carrito = () => {
               <Button variant="secondary" onClick={() => allContext.removeProduct(e.id)}> Remover </Button>{' '}
               <Button variant="secondary" onClick={() => allContext.increProduct(e.id)}>+ </Button>{' '}
               <Button variant="outline-secondary"> {e.count}</Button>
+  
               </ButtonGroup>
               </ButtonToolbar>
             </div>
@@ -65,11 +101,12 @@ export const Carrito = () => {
       <h3>Total consumo: ${totalCartAmount}</h3>
       </div>
       <div class="boton" >
-      <Button type="submit" variant="warning" >Enviar a Cocina</Button>
+      <Button type="submit" variant="warning"  onClick={sendOrder} >Enviar a Cocina</Button>
       </div>
       </form>
         </Container>
       </div>
-      </>
+    </>
     );
   };
+  
