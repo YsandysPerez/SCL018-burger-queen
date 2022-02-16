@@ -21,7 +21,7 @@ const Foods = () => {
             
             return(
             <div key={index} className="w-1/2">
-                <Button  variant="warning" size="lg" onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</Button>
+                <Button className= "menuBtn" variant="warning" size="lg" onClick={() => allContext.addProduct(element)}>{element.name} ${element.price}</Button>
             </div>
             );
         })}

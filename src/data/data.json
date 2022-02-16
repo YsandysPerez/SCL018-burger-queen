@@ -76,16 +76,19 @@
   {
     "id": 13,
     "name": "Vegetariana",
+    "price": 0,
     "category": "Meal"
   },
   {
     "id": 11,
     "name": "Vacuno",
+    "price": 0,
     "category": "Meal"
   },
   {
     "id": 12,
     "name": "Pollo",
+    "price": 0,
     "category": "Meal"
   }
   

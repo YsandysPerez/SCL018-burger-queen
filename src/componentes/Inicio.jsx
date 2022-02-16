@@ -11,8 +11,8 @@ export const Inicio = () => {
       <img src={logo} alt="" class="restLogo" />
       </div>
       <div class="botones">
-      <Link to="/Garzon"><Button  class="btn" variant="warning" >Garzón</Button> </Link>
-      <Link to="/Cocina"><Button class="btn" variant="warning" >Cocina</Button></Link>
+      <Link to="/Garzon"><Button  className="btni" variant="warning" >Garzón</Button> </Link>
+      <Link to="/Cocina"><Button className="btni" variant="warning" >Cocina</Button></Link>
       </div>
     </div>
    </>

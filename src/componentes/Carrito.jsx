@@ -4,8 +4,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { menuContext } from "../App";
 import {Button, ButtonToolbar , ButtonGroup, Container  } from "react-bootstrap";
 import { Form } from "./Form";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+//import Swal from "sweetalert2";
+//import withReactContent from "sweetalert2-react-content";
 
 export const Carrito = () => {
   const allContext = useContext(menuContext);
@@ -14,7 +14,7 @@ export const Carrito = () => {
   .reduce((total, e) => (total = total + e.price * e.count), 0)
   .toFixed(2);
 
-  const MySwal = withReactContent(Swal);
+  /*const MySwal = withReactContent(Swal);
 
   const sendOrder = (e) => {
     if (allContext.table === "" || allContext.name === "") {
@@ -46,6 +46,14 @@ export const Carrito = () => {
             }
         });
     }
+};*/
+
+const getDate = () => {
+  const hoy = new Date();
+  const fecha = `${hoy.getDate()} - ${(hoy.getMonth() + 1)} - ${hoy.getFullYear()}`;
+  const hora = `${hoy.getHours()}:${hoy.getMinutes()}:${hoy.getSeconds()}`;
+  const fechaYHora = `Fecha: ${fecha} - Hora: ${hora}`;
+  return fechaYHora;
 };
 
 
@@ -57,7 +65,8 @@ export const Carrito = () => {
                 table: allContext.table,
                 order: allContext.products.order,
                 total: totalCartAmount,
-                status: "Pendiente"
+                time: getDate(),
+                status: "Pendiente",
             });
 
             allContext.changeName('');
@@ -101,7 +110,7 @@ export const Carrito = () => {
       <h3>Total consumo: ${totalCartAmount}</h3>
       </div>
       <div class="boton" >
-      <Button type="submit" variant="warning"  onClick={sendOrder} >Enviar a Cocina</Button>
+      <Button type="submit" variant="warning" >Enviar a Cocina</Button>
       </div>
       </form>
         </Container>
