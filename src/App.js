@@ -7,15 +7,12 @@ import { Cocina } from "./componentes/Cocina.jsx";
 import data from "../src/data/data.json";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
 const menu = data;
 export const menuContext = createContext();
 
 function App() {
   const [name, changeName] = useState('');
   const [table, changeTable] = useState('');
-
   const [products, boxProducts] = useState({
     productList: menu,
     order: []
@@ -71,7 +68,7 @@ function App() {
     });
   };
 
-  const allVar = { name, changeName, table, changeTable, products, boxProducts, addProduct, clearProductsFromOrder, removeProduct, increProduct, decreProduct };
+  const allVar = { name, changeName, table, changeTable, products, boxProducts, addProduct, clearProductsFromOrder, removeProduct, increProduct, decreProduct};
 
   return (
     <menuContext.Provider value={allVar}>
