@@ -1,5 +1,4 @@
 import React from "react";
-//import { Link } from "react-router-dom";
 import Drinks from "./Drinks.jsx";
 import Food from "./Food.jsx";
 import { Carrito } from "./Carrito.jsx";

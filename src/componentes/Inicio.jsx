@@ -8,11 +8,11 @@ export const Inicio = () => {
     <>
     <div class="back">
       <div class="logo">
-      <img src={logo} alt="" />
+      <img src={logo} alt="" class="restLogo" />
       </div>
       <div class="botones">
-      <Link to="/Garzon"><Button  variant="warning"  >Garzón</Button> </Link>
-      <Link to="/Cocina"><Button variant="warning" >Cocina</Button></Link>
+      <Link to="/Garzon"><Button  class="btn" variant="warning" >Garzón</Button> </Link>
+      <Link to="/Cocina"><Button class="btn" variant="warning" >Cocina</Button></Link>
       </div>
     </div>
    </>
